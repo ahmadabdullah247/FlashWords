@@ -1,54 +1,16 @@
-var express = require('express');
-var defineWord = require('define-word');
+// require modules =============================================================================================
+const express = require('express');
+const path = require('path');
+// initilize variables =========================================================================================
+const app = express();
+const port = process.env.PORT || 3000;
 
-var app = express();
-var port = process.env.PORT || 3000;
+// app middleware configuration ================================================================================
+app.use(express.static(__dirname + '/dist'));
 
+// routes ======================================================================================================
 
+app.use('/*', (req, res) => res.sendFile(path.join(__dirname + '/dist/index.html')));
 
-app.get('/', function (req, res) {
-    // if (req.params.word == undefined && req.params.word == ' ') {
-    //     res.status(404).send({ msg: 'Missing peremeter' });
-    // } else {
-    var words = [
-        "volatile",
-        "vortex",
-        "warranted",
-        "wary",
-        "welter",
-        "whimsical",
-        "whimsy",
-        "wistful",
-        "zealot",
-        "zealotry",
-        "de facto",
-        "deviant",
-        "defer",
-        "platonic",
-        "discern",
-        "bionics",
-        "heuristic",
-        "equitable",
-        "guile",
-        //"reductionistic",
-        "inertia",
-        "pathos",
-        "pedant"
-    ];
-    var dictionary = {}
-    words.forEach(function (word) {
-        console.log(word);
-        var x = defineWord.define(word);
-        var synonyms = defineWord.synonyms(word);
-        dictionary[word] = { type: x.type, meaning: x.definitions, synonyms: synonyms };
-    })
-
-    res.status(200).send(dictionary);
-    // }
-});
-
-//app.all('*', (req, res) => res.redirect('/'));
-
+// start server ======================================================================================================
 app.listen(port, () => console.log('Server is live on port : ', port));
-
-
