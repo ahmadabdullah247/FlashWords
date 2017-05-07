@@ -17,15 +17,27 @@ export class AppComponent {
       .subscribe(res => {
         this.dictionary = res.json();
         this.dicList = Object.keys(this.dictionary);
-        this.word=this.dicList.pop();
-        console.log(this.word);
+        var x = this.dicList.pop();
+        this.word = {
+          word: x,
+          type: this.dictionary[x].type,
+          meaning: this.dictionary[x].meaning,
+          synonyms: this.dictionary[x].synonyms,
+        }
         return;
       });
+    this.word = "yo";
   }
 
   public getOne() {
     if (this.dicList != undefined) {
-      this.word = this.dicList.pop();
+      var x = this.dicList.pop();
+      this.word = {
+        word: x,
+        type: this.dictionary[x].type,
+        meaning: this.dictionary[x].meaning[0],
+        synonyms: this.dictionary[x].synonyms[0],
+      }
     }
   }
 }

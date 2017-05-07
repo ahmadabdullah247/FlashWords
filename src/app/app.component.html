@@ -4,13 +4,18 @@
 
 <div id="card">
   <div class="front panel">
-    <h1>{{ word }}</h1>
+    <article>
+      <h1>{{ word.word }}</h1>
+    </article>
   </div>
-  <div class="back panel">
-    <!--<p>{{ wordDetail }}</p>-->
+  <div class="back panel" (click)="getOne()">
+    <article>
+      <h4>Type</h4>
+      <p>{{ word.type }}</p>
+      <h4>Meaning</h4>
+      <p>{{ word.meaning }}</p>
+      <h4>Synonyms</h4>
+      <p>{{ word.synonyms }}</p>
+    </article>
   </div>
 </div>
-<!--<div *ngFor="let word of dicList;let i = index">
-  <h3>{{ word }}</h3>
-  <p>{{dictionary[word].meaning}}</p>
-</div>-->
