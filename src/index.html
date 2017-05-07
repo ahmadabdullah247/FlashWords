@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>FlashWords</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+  <div id='wrapper'>
+    <header>
+      <h2>FlashWords</h2>
+    </header>
+    <app-root>Loading...</app-root>
+    <footer>
+      <p>&copy; All Rights Reserved By <a href="http://geekclan.net/">GeekClan</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#card").flip({
+          trigger: 'click'
+        });
+
+      });
+    </script>
+  </div>
+  <!--<img class="hero-animate globe" src="assets/img/globe.svg"/>  -->
+</body>
+
+</html>

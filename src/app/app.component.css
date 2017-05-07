@@ -1,0 +1,12 @@
+#inner_wrapper{
+    margin: 5% 30%;
+}
+#card{
+    height: 50vh;
+    width: 70vh;
+    border-radius: 5px;
+}
+.panel{
+    background-color:white;     
+    border-radius: 5px;        
+}

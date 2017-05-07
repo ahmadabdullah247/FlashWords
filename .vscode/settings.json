@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude":{
+        "e2e":true,
+        "node_modules":true,
+        ".editorconfig":true,
+        "angular-cli.json":true,
+        "protractor.conf.js":true,
+        "karma.conf.js":true,
+        "tslint.conf.js":true,
+        "tslint.json":true,
+        "REDME.md":true        
+    }
+}

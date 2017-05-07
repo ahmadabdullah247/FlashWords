@@ -1,0 +1,16 @@
+<!--<div id="inner_wrapper">
+    <div id="panel"></div>
+</div>-->
+
+<div id="card">
+  <div class="front panel">
+    Front content
+  </div>
+  <div class="back panel">
+    Back content
+  </div>
+</div>
+<div *ngFor="let word of dicList;let i = index">
+  <h3>{{ word }}</h3>
+  <p>{{dictionary[word].meaning}}</p>
+</div>
